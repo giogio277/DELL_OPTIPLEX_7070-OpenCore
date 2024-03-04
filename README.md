@@ -1,9 +1,6 @@
-[![](https://img.shields.io/badge/EFI-Release-informational?style=flat&logo=apple&logoColor=white&color=9debeb)](https://github.com/Lorys89/DELL_OPTIPLEX_3060_MFF/releases)
+# Dell Optiplex 7070 MFF Hackintosh (Private repo, do NOT follow this guide)
 
-
-# Dell Optiplex 3060 MFF Hackintosh
-
-EFI for Dell Optiplex 3060 MFF with OpenCore bootloader
+EFI for Dell Optiplex 7070 MFF with OpenCore bootloader
 
 ![descrizione](./Screenshot/pc.jpg)
 
@@ -15,13 +12,11 @@ EFI for Dell Optiplex 3060 MFF with OpenCore bootloader
 | iGPU             | Intel® UHD Graphics 630            |
 | Lan              | Realtek 8168                       |
 | Audio            | Realtek ALC255                     |
-| Ram              | 32 GB DDR4 2400 Mhz                |
-| Wifi + Bluetooth | BCM94352Z (DW1560)                 |
+| Ram              | 8 GB DDR4 2400 Mhz                 |
 | NVMe             | SAMSUNG 970 EVO PLUS 250 GB (MACOS)|
-| SSD              | SAMSUNG 850 EVO 500 GB (WINDOWS)   |
 | SmBios           | MacMini 8,1                        |
 | BootLoader       | OpenCore 0.7.5                     |
-| macOS            | Monterey 12.1 Beta                 |
+| macOS            | Ventura                            |
 
 
 ![infomac](./Screenshot/infomac.png)
@@ -32,7 +27,6 @@ EFI for Dell Optiplex 3060 MFF with OpenCore bootloader
 ![infodp2](./Screenshot/DpciScreen2.png)
 ![Fan&Temp](./Screenshot/fantemp.png)
 ![Speedtest](./Screenshot/speedtest.png)
-![bench](./Screenshot/RAM-NVME.png)
 ![CPU](./Screenshot/cpu.png)
 ![OPENCL](./Screenshot/opencl.png)
 ![METAL](./Screenshot/metal.png)
@@ -51,13 +45,11 @@ EFI for Dell Optiplex 3060 MFF with OpenCore bootloader
 - [x] All USB Ports 
 - [x] SpeedStep / Sleep / Wake
 - [x] HID Key PWRB & SLPB 
-- [x] Wi-Fi and Bluetooth BCM94352Z (DW1560) Module
 - [x] CONTROLLER NVME PciE Gen3x4
 - [x] CONTROLLER SATA III
 - [x] All Sensors (CPU, NVME, SATA, FAN)
 - [x] Realtek RTL8168 LAN
 - [x] NVRAM
-- [x] Windows 11 boot from OpenCore
 
 
 
@@ -89,9 +81,8 @@ See [ioreg](./ioregMacmini.ioreg) for more clarification
 * Absolute
 * Intel SGX
 * Enable UEFI Network Stack
-* cfg lock and DVMT and unlock NVME gen3: DO AT YOUR OWN RISK!!! It may brick your laptop.
+* cfg lock and DVMT: DO AT YOUR OWN RISK!!! It may brick your laptop.
 
-- [Bios Extract to txt](https://github.com/Lorys89/DELL_OPTIPLEX_3060_MFF/raw/main/TOOLS%20EFI%20MOD/bios%203%203060mff%20085C.txt)
  
 Create a usb in FAT with MBR map and put [ru.efi](https://github.com/Lorys89/DELL_OPTIPLEX_3060_MFF/raw/main/TOOLS%20EFI%20MOD/RU.efi) in it 
 then go to the bios, and create an entry with the path of the usb and setting the ru.efi file and the name of 
@@ -106,10 +97,6 @@ enter and then ctrl + w to save and then alt + q to exit. proceed to check if yo
 For the DVMT pre all values you have to go to the Setup menu and enter and look for 08DC and set it from 01 to 02 (value 02 is for 64MB pre all)and then move then save with ctrl + w and to exit alt + q and you will have the suitable DVMT values to the igpu. 
 
 ![Setup](./TOOLS%20EFI%20MOD/DVMT.bmp)
-
-For unlock the NVME from GEN2 to GEN3 you have to go to the Setup menu and enter and look the photo and set the value from 02 to 03 and then move then save with ctrl + w and to exit alt + q and you will have the NVME Work to GEN3. 
-
-![Setup](./TOOLS%20EFI%20MOD/NVME.bmp)
 
 ## Credits
 
